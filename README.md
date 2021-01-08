@@ -19,9 +19,15 @@
   </ul>
 </p>
 
-<p>Axios requests are in separate file<p><br>
-/partials/axiosController.js
-
+<p>Axios requests are in separate file <br />
+js/partials/axiosController.js
+</p>
+<p>All vue routes <br />
+/js/routes.js
+</p>
+<p>User data<br />
+/js/store.js
+</p>
 <p><i>dependecies</i></p>
 <ul>
   <li>bootstrap-vue</li>
