@@ -28,7 +28,7 @@ js/partials/axiosController.js
 <p>User data<br />
 /js/store.js
 </p>
-<p><i>dependecies</i></p>
+<p><b>dependecies</b></p>
 <ul>
   <li>bootstrap-vue</li>
 <li>vue-router</li>
@@ -39,9 +39,9 @@ js/partials/axiosController.js
 <h2>Backend</h2>
 
 <p><b>AuthController.php</b></p>
-Controller for login/register/logout users
-the lib used for jwt auth is <i>tymon/jwt-auth</i>
+<p>Controller for login/register/logout users
+the lib used for jwt auth is <i>tymon/jwt-auth</i></p>
 
 <p><b>ItemController.php</b></p>
-Controller for Adding,editing, deleting, updating todo list items
+<p>Controller for Adding,editing, deleting, updating todo list items</p>
 
