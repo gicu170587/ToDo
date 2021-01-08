@@ -1,6 +1,5 @@
 <h2>Frontend</h2>
-<p>
-<h4>Vue components</h4>
+
 <ul>
   <li> MainApp.vue - root</li>
 <li>Header.vue</li>
@@ -37,3 +36,11 @@ js/partials/axiosController.js
   </ul>
 
 <h2>Backend</h2>
+
+<p><b>AuthController.php</b></p>
+Controller for login/register/logout users
+the lib used for jwt auth is <i>tymon/jwt-auth</i>
+
+<p><b>ItemController.php</b></p>
+Controller for Adding,editing, deleting, updating todo list items
+
