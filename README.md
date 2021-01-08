@@ -1,15 +1,16 @@
 <h2>Frontend</h2>
 
 <ul>
-  <li> MainApp.vue - root</li>
+<li> MainApp.vue - root</li>
 <li>Header.vue</li>
 <li>Home.vue</li></ul>
-<p><i>Users</i></p>
+
+<p><b>Users</b></p>
 <ul><li>Login.vue</li>
 <li>Register.vue</li>
 </ul>
 
-<p><i>ToDo lists in my case Items</i></p>
+<p><b>ToDo lists in my case Items</b></p>
 <ul>
   <li>ListItems.vue - all items imported in home</li>
 <li>ListItem.vue - child of ListItems.vue</li>
