@@ -25,10 +25,12 @@ Route::group(['prefix' => 'auth'], function ($router) {
     Route::post('logout', 'App\Http\Controllers\AuthController@logout');
     Route::post('refresh', 'App\Http\Controllers\AuthController@refresh');
     Route::post('me', 'App\Http\Controllers\AuthController@me');
+    Route::get('/user/verify/{token}', 'App\Http\Controllers\AuthController@verifyUser');
   
   });
 
-Route::get('items/user/{id}',  'App\Http\Controllers\ItemController@index');
+Route::get('items/user/{id}/page/{page}',  'App\Http\Controllers\ItemController@index');
+Route::get('items/user/{id}/all',  'App\Http\Controllers\ItemController@countall');
 Route::prefix('/item')->group( function(){
     Route::post('/store','App\Http\Controllers\ItemController@store');
     Route::put('/{id}', 'App\Http\Controllers\ItemController@update');
