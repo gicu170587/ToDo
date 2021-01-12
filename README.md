@@ -1,15 +1,15 @@
 ----------------------------------------
 <p><h3>Updates</h3></p>
-<p><b>->New dependecie</b></p>
+<p><b>-> New dependecie</b></p>
 <p>vue-infinite-loading -- for scroll pagination</p>
 
-<p><b>->New model (form email verification)</b></p>
+<p><b>-> New model (form email verification)</b></p>
 <p>Models/VerifyUser.php</p>
 <p>Mail/VerifyMail.php</p>
 
-<p>->Migrations are modified</p>
+<p>-> Migrations are modified</p>
 
-<p>->Controllers,components, and routes have modifications</p>
+<p>-> Controllers, components, and routes are modified</p>
 
 <h2>Frontend</h2>
 
