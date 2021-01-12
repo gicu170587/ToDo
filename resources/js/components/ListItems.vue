@@ -1,56 +1,66 @@
 <template>
- <div>
-     <div :per-page="perPage" :current-page="currentPage"  id="my-pg">
-    <b-list-group v-for="(item, index) in itemsForList" :key="index" >
-        <list-item :item="item" class="item" v-on:itemchange="$emit('reloadlist')" />
-    </b-list-group>
-     </div>
-     <b-pagination
-     v-if="rows>0"
-     pills
-     size="sm"
-      v-model="currentPage"
-      :total-rows="rows"
-      :per-page="perPage"
-      aria-controls="my-pg"
-      align="center"
-    ></b-pagination>
- </div>
-    
+  <div>
+    <h4>
+      My Todo list: <b-badge variant="primary">{{ this.count }} items</b-badge>
+    </h4>
+
+    <div>
+      <b-list-group v-for="(item, index) in this.items" :key="index">
+        <list-item :item="item" class="item" />
+      </b-list-group>
+      <infinite-loading @infinite="infiniteHandler"></infinite-loading>
+    </div>
+  </div>
 </template>
 
 <script>
-import listItem from "./ListItem"
+import listItem from "./ListItem";
+import InfiniteLoading from "vue-infinite-loading";
+import axios from "axios";
+
 export default {
-    
-   props:['items'],
-   data: function () {
+  data: function () {
     return {
-        perPage: 3,
-        currentPage: 1,
+      page: 1,
+      items: [],
+      userid: null,
+      count: null,
     };
   },
-   components:{
-       listItem
-   } ,
-   methods:{
-  
-   },
-   computed: {
-        itemsForList() {
-    return this.items.slice(
-      (this.currentPage - 1) * this.perPage,
-      this.currentPage * this.perPage,
-    );
+  components: {
+    listItem,
+    InfiniteLoading,
   },
-      rows() {
-        return this.items.length
+  methods: {
+    getcurrentUserId() {
+      if (this.$store.getters.currentUser) {
+        this.userid = this.$store.getters.currentUser.id;
       }
-    }
-}
+    },
+    getall() {
+      axios.get("/api/items/user/" + this.userid + "/all").then((response) => {
+        this.count = response.data;
+      });
+    },
+    infiniteHandler($state) {
+      axios
+        .get("/api/items/user/" + this.userid + "/page/" + this.page + "/")
+        .then((response) => {
+          if (response.data.length > 0) {
+            this.page += 1;
+            response.data.forEach((item) => this.items.push(item));
+            $state.loaded();
+          } else {
+            $state.complete();
+          }
+        });
+    },
+  },
+  computed: {},
+  created() {
+    this.getcurrentUserId();
+
+    this.getall();
+  },
+};
 </script>
-<style  scoped>
-#my-pg{
-margin-bottom: 20px;
-}
-</style>

@@ -18,7 +18,8 @@ export function login(credentials){
             res(response.data);
         })
         .catch(err => {
-            rej('Wrong Email/Password combination.')
+           // console.log(err.response.data.msg);
+            rej(err.response.data.msg)
         })
     })
 }

@@ -7,6 +7,7 @@ import {routes} from './routes.js';
 import storeData from './store.js'; //store auth user data
 import MainApp from './components/MainApp.vue';
 import Vuelidate from 'vuelidate';
+
 import { BootstrapVue,  BIconTrash, BIconPlusSquare, BIconPencilSquare } from 'bootstrap-vue'
 
 // Import Bootstrap an BootstrapVue CSS files
