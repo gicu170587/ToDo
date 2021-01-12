@@ -6,7 +6,7 @@
 <p><b>new model (form email verification)</b></p>
 <p>Models/VerifyUser.php</p>
 <p>Mail/VerifyMail.php</p>
-----------------------------------------
+
 <h2>Frontend</h2>
 
 <ul>
