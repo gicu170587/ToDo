@@ -7,9 +7,9 @@
 <p>Models/VerifyUser.php</p>
 <p>Mail/VerifyMail.php</p>
 
-<p>-> Migrations are modified</p>
+<p>-> <b>Migrations are modified</b></p>
 
-<p>-> Controllers, components, and routes are modified</p>
+<p>-> <b>Controllers, components, and routes are modified</b></p>
 
 <h2>Frontend</h2>
 
