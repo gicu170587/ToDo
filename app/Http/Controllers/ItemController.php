@@ -15,13 +15,20 @@ class ItemController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($user_id)
+    public function index($user_id, $page)
     {
        
-            return Item::where('user_id',$user_id)->get();
-        
+            return Item::where('user_id',$user_id)->forPage($page, 3)->orderBy('id','DESC')->get();
+    
       
        
+    }
+    public function countall($user_id)
+    {
+         
+            $allitems = Item::where('user_id',$user_id)->get();
+         
+           return count($allitems);
     }
 
     /**

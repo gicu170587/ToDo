@@ -7,12 +7,18 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Models\VerifyUser;
+use Illuminate\Database\Eloquent\Model;
 
 class User extends Authenticatable implements JWTSubject
 {
     use HasFactory, Notifiable;
 
     
+    public function verifyUser()
+    {
+      return $this->hasOne(VerifyUser::class);
+    }
     /**
      * The attributes that are mass assignable.
      *
@@ -56,4 +62,7 @@ class User extends Authenticatable implements JWTSubject
     {
         return [];
     }
+
+   
+
 }
